@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Pacientes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1 { color: #0056b3; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .paciente { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; background-color: #e9f7ff; }
+        .paciente strong { color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Pacientes Jennifer Sarabia</h1>
+        {% if lista_pacientes %}
+            {% for paciente in lista_pacientes %}
+                <div class="paciente">
+                    <p><strong>Nombre:</strong> {{ paciente.nombre }}</p>
+                    <p><strong>Edad:</strong> {{ paciente.edad }} años</p>
+                    <p><strong>Diagnóstico:</strong> {{ paciente.diagnostico }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay pacientes para mostrar.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
